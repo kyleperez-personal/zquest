@@ -1,0 +1,43 @@
+For your own purposes, you may want to add your own races (or remove some).
+
+To do this, you have to open:
+	race_select_functions.cpp
+	
+In race_select_functions.cpp modify the following functions:
+
+1. race_list()
+	See inline example in source code.
+	
+	To add more races, add to cout list, following examples
+	To remove, remove from cout list
+		--To make hidden races, remove races from this list
+
+2. race_info()
+	See inline example in source code
+	
+	To add races, add else-if statement with race name. Add a description
+	To remove, remove else-if statements
+		--To make hidden races, add else-if statement with race, but don't include
+		it in race_list()
+
+3. race_selection()
+	See inline example in source code
+	
+	To add races, add else-if statement with race name; copy code from other race
+	To remove races, remove else-if statements
+
+4. race_confirm()
+	Inline code example of poor quality
+	
+	Add if/else-if statements to the initial block of code: (unmodded lines 585-606) that
+	hold the different cout lines.
+	Add your proper descriptor:
+		EXAMPLE: adding the 'Black" race
+			cout << "You are Black" << endl;
+			
+		--The else statement should cover a significant portion of races that don't start
+		with vowels
+	To remove races, just remove the relevant if/else-if statements to save on computation time.
+	
+	
+NOTE: you will have to modify the source code to add dialogue/information related to your added races in the campaign itself.

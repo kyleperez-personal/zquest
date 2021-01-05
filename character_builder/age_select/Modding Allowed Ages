@@ -1,0 +1,15 @@
+For your own purposes, you may want to change the minimum or maximum age.
+
+To do this, you have to open (in the source code folder)
+	globals/global_variables/global_variables.cpp
+	
+In global_variables.cpp modify the following integers:
+
+1. MIN_PLAYER_AGE
+
+2. MAX_PLAYER_AGE
+
+These variable names make it clear what your modifying.
+
+
+NOTE: you will have to modify the rest of the code in order to add special features that relate to the new minimum and maximum player ages (if you pick an age that is already not supported by default).

@@ -1,0 +1,7 @@
+'question' is used to color questions.
+'info' is used to color information
+'notice' is used to color in-game notices not pertaining to progression (IE: usually errors in typing)
+'picked' is used to color dialogue options that have already been picked.
+
+After using one of these, input your cout string between '<<' and '<<', and after the second '<<', follow up with 'endf'.
+'endf' is the variable assigned to the color escape code, which stops printing colored text in terminal.

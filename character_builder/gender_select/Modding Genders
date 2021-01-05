@@ -1,0 +1,93 @@
+For whatever reason, you may want to add extra genders.
+I suppress my own beliefs on this.
+
+To do this, you have to open:
+	gender_select.cpp
+	gender_select_functions.cpp
+	gender_select_functions.h
+	
+(NOTE: THE FOLLOWING EXAMPLE IS FOR A TRINARY SYSTEM; it can certainly be made significantly more complex if you so choose, for example, making the boolean values non-exclusive, etc)
+	
+In gender_select.cpp modify the following:
+	Under the Output section (line 11), add more boolean values that tell information about the player gender
+		-note, this is not absolutely necessary, but a shorthand for future checks down the line.
+		
+	EX:
+		bool player_is_gender1;
+		bool player_is_gender2;
+		bool player_is_gender3;
+		...
+		
+	You will have to modify the gender_pick() function to have more arguments
+		EX (AT LINE 26)
+			gender_pick(player_gender, player_is_gender1, player_is_gender_2, player_is_gender3);
+			
+			
+	
+In gender_select_functions.cpp modify the following function:
+
+1. gender_pick()
+	This function was explicitly built with a binary choice in mind.
+	
+	You will have to modify the gender_pick() function to accept more boolean arguments that are passed BY REFERENCE into the function.
+		EX (AT LINE 21 to 25)
+			void gender_pick(
+				string& player_gender,
+				bool& player_is_gender1,
+				bool& player_is_gender2,
+				bool& player_is_gender3
+				...
+			) {
+	
+	You may want to print a list of the availible genders you declare, which prints out as so:
+		(AT LINE 30)
+		cout << "Pick one of the following genders:" << endl;
+		cout << "Gender 1" << endl;
+		cout << "Gender 2" << endl;
+		cout << "Gender 3" << endl;
+		...
+	
+	For the checking of player genders, you will need to add more else if statements to check for the correct input
+		(AT LINES 36 to 49)
+		if (player_gender == "Gender 1") {
+		
+			player_is_gender1 = true;
+			player_is_gender2 = false;
+			player_is_gender3 = false;
+			return;
+		
+		}
+		else if (player_gender == "Gender 2") {
+		
+			player_is_gender1 = false;
+			player_is_gender2 = true;
+			player_is_gender3 = false;
+			return;
+			
+		}
+		else if (player_gender == "Gender 3") {
+		
+			player_is_gender1 = false;
+			player_is_gender2 = false;
+			player_is_gender3 = true;
+			return;
+			
+		}
+		...
+		
+		
+		
+		
+In gender_select_functions.h modify the following:
+	Make the gender_pick function compatible with all your arguments
+	EX: (LINE 8 to 12)
+		void gender_pick(
+			string& player_gender,
+			bool& player_is_gender1,
+			bool& player_is_gender2,
+			bool& player_is_gender3
+			...
+		);
+	
+	
+NOTE: you will have to modify the source code to add dialogue/information related to your added genders in the campaign itself.
